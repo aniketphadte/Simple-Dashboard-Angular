@@ -1,0 +1,47 @@
+<div id="locationSelector">
+    <div class="col-sm-2 form-group">
+        <label>Region:</label>
+        <select class="form-control" [(ngModel)]="region" id="region" (ngModelChange)="onRegionSelected($event)">
+          <option value="undefined" disabled selected>select a region</option>
+          <option *ngFor="let region of regions" [value]="region" >{{region}}</option>
+        </select>
+    </div>
+    <div class="col-sm-4 form-group">
+        <label>Country:</label>
+        <select class="form-control" [(ngModel)]="alpha2Code" id="countryCode">
+          <option value="undefined" disabled selected>select a country</option>
+          <option *ngFor="let country of countries; let i= index" [value]="country.alpha2Code" >{{country.name}}</option>
+        </select>
+    </div>
+    <div class="col-sm-4 form-group">
+        <label>City:</label>
+        <input class="form-control" placeholder="Enter a city" type="text" id="name" class="form-control" name="city" ngModel required [(ngModel)]="city" (change)="checkInput()">
+    </div>
+    <div>
+        <button class=" btn btn-success " type="submit " [disabled]="!hasCityValue " (click)="submitWeatherCity() ">Check</button>
+    </div>
+</div>
+<div id="sidebar">
+    <!-- <div class="toggle-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> -->
+    <nav>
+        <ul>
+            <li routerLinkActive="active">
+                <a [routerLink]="['stats',alpha2Code,inputCity]">
+                    <i class="material-icons">timeline</i>
+                </a>
+            </li>
+            <li routerLinkActive="active">
+                <a [routerLink]="['maps',alpha2Code,inputCity]">
+                    <i class="material-icons">satellite</i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>

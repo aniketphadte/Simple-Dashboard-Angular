@@ -1,0 +1,118 @@
+// nav {
+//     background: #2D2E2E;
+//     height: 100%;
+//     ul {
+//         list-style-type: none;
+//         padding: 0;
+//         margin: 0;
+//         li {
+//             a {
+//                 color: #fff;
+//                 padding: 20px;
+//                 display: block;
+//             }
+//             .activated {
+//                 background-color: #00a8ff;
+//             }
+//         }
+//     }
+// }
+// #navigator {
+//     display: grid;
+//     grid-template-columns: 70px auto;
+//     height: 100%;
+//     #content {
+//         padding: 30px 50px;
+//         ul {
+//             list-style-type: none;
+//             margin: 0;
+//             padding: 0;
+//             li {
+//                 background: #fff;
+//                 border-radius: 8px;
+//                 padding: 20px;
+//                 margin-bottom: 8px;
+//                 a {
+//                     font-size: 1.5em;
+//                     text-decoration: none;
+//                     font-weight: bold;
+//                     color: #00A8FF;
+//                 }
+//                 ul {
+//                     margin-top: 20px;
+//                     li {
+//                         padding: 0;
+//                         a {
+//                             font-size: 1em;
+//                             font-weight: 300;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #151719;
+    nav {
+        // background: #2D2E2E;
+        // height: 100%;
+        ul {
+            // list-style-type: none;
+            // padding: 0;
+            // margin: 0;
+            li {
+                a {
+                    color: rgba(230, 230, 230, 0.9);
+                    list-style: none;
+                    padding: 15px 10px;
+                    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+                    display: block;
+                    text-decoration: none;
+                }
+                .activated {
+                    background-color: #00A7FF;
+                }
+            }
+        }
+    }
+    .toggle-btn {
+        position: absolute;
+        left: 230px;
+        span {
+            display: block;
+            width: 10px;
+            height: 5px;
+            background: #151719;
+            margin: 5px 0px;
+        }
+    }
+}
+
+.statsContent {
+    position: fixed;
+    width: 90%;
+    height: 100%;
+    margin-left: 80px;
+    margin-right: -100px;
+}
+
+#locationSelector {
+    background: #2B67A4;
+    color: rgba(230, 230, 230, 0.9);
+    padding: 30px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, 0.3);
+    .btn {
+        padding: 15px 15px;
+        margin: 9px 0px;
+    }
+}
