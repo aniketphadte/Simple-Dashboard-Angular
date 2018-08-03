@@ -20,7 +20,7 @@ export class StatsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log("Init Function ");
+    
     this._route.paramMap.subscribe(params =>{
       this.countryCode = params.get('countryCode');
       this.city = params.get('city');
@@ -32,9 +32,9 @@ export class StatsComponent implements OnInit {
   }
 
   getLineChart(){
-    this.errorMsg="";
     this._weather.dailyForecast(this.city,this.countryCode).subscribe(
       res => {
+        this.errorMsg="";
         let temp_max = res['list'].map(res=> res.main.temp_max);
         let temp_min = res['list'].map(res=> res.main.temp_min);
         let alldates = res['list'].map(res=> res.dt);
@@ -82,9 +82,9 @@ export class StatsComponent implements OnInit {
   }
 
   getPieChart(){
-    this.errorMsg="";
     this._weather.dailyWeather(this.city,this.countryCode).subscribe(
       res => {
+        this.errorMsg="";
         let temp = res['main'].temp;
         let pressure = res['main'].pressure;
         let humidity = res['main'].humidity;

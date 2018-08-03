@@ -1,15 +1,18 @@
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-4 col-xs-4">
         <div [hidden]="!chart">
             <canvas id="piechart-canvas">{{pieChart}}</canvas>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 col-sm-8 col-xs-8">
         <div [hidden]="!pieChart">
             <canvas id="linechart-canvas">{{chart}}</canvas>
         </div>
     </div>
     <div *ngIf="errorMsg !=''" style=" text-align: center ">
         <h3>{{errorMsg}}</h3>
+    </div>
+    <div *ngIf="countryCode !='' || city !='' " style=" text-align: center ">
+        <h3>{{countryCode}} , {{city| uppercase}}</h3>
     </div>
 </div>
