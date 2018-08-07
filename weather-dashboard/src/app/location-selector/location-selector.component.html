@@ -15,10 +15,10 @@
     </div>
     <div class="col-sm-4 form-group">
         <label>City:</label>
-        <input class="form-control" placeholder="Enter a city" type="text" id="name" class="form-control" name="city" ngModel required [(ngModel)]="city" (change)="checkInput()">
+        <input class="form-control" placeholder="Enter a city" type="text" id="name" class="form-control" name="city" ngModel required [(ngModel)]="city">
     </div>
     <div>
-        <button class=" btn btn-success " type="submit " [disabled]="!hasCityValue " (click)="submitWeatherCity() ">Check</button>
+        <button class=" btn btn-success " type="submit " [disabled]="!city " (click)="submitWeatherCity() ">Check</button>
     </div>
 </div>
 <div id="sidebar">
@@ -30,12 +30,12 @@
     <nav>
         <ul>
             <li routerLinkActive="activated">
-                <a [routerLink]="['stats',alpha2Code,inputCity]">
+                <a [routerLink]="['/stats',alpha2Code,inputCity]">
                     <i class="material-icons">timeline</i>
                 </a>
             </li>
             <li routerLinkActive="activated">
-                <a [routerLink]="['maps',alpha2Code,inputCity]">
+                <a [routerLink]="['/maps',alpha2Code,inputCity]">
                     <i class="material-icons">satellite</i>
                 </a>
             </li>

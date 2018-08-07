@@ -38,26 +38,18 @@ export class LocationSelectorComponent implements OnInit {
     );
   }
 
-  checkInput(){
-    if(this.city.length >0)
-     {
-       this.hasCityValue = true;
-     }
-     else{
-      this.hasCityValue = false;
-     }
-   }
+
   submitWeatherCity(){
       this.activateWeatherChart = true;
       this.inputCity =this.city;
       if(this._router.url.split('/')[1]== 'maps')
       {
         // this._router.navigateByUrl('/maps/'+this.alpha2Code+'/'+this.city);
-        this._router.navigate(['/maps',this.alpha2Code,this.city]);
+        this._router.navigate(['maps',this.alpha2Code,this.city],{relativeTo: this._route});
       }
       else{
         // this._router.navigateByUrl('/stats/'+this.alpha2Code+'/'+this.city);
-        this._router.navigate(['/stats',this.alpha2Code,this.city]);
+        this._router.navigate(['stats',this.alpha2Code,this.city], {relativeTo: this._route});
       }
   }
 

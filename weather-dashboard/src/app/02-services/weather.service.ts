@@ -15,14 +15,14 @@ export class WeatherService {
   dailyForecast(city: string, countryCode: string){
     this.firstCall=true;
     return this._http.get(
-      "http://api.openweathermap.org/data/2.5/forecast?q="+city+","+countryCode+"&appid=7e0d625e25d6dff6dedd0f893b02ced2"
+      "http://api.openweathermap.org/data/2.5/forecast?q="+city+","+countryCode+"&appid=b6907d289e10d714a6e88b30761fae22"
     ).map(result =>result).catch(this.errorHandler);
   }
 
   dailyWeather(city: string, countryCode: string){
     this.firstCall=true;
     return this._http.get(
-      "http://api.openweathermap.org/data/2.5/weather?q="+city+","+countryCode+"&appid=7e0d625e25d6dff6dedd0f893b02ced2"
+      "http://api.openweathermap.org/data/2.5/weather?q="+city+","+countryCode+"&appid=b6907d289e10d714a6e88b30761fae22"
     ).map(result =>result).catch(this.errorHandler);
   }
 
